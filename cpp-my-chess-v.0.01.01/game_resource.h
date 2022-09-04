@@ -72,7 +72,8 @@ namespace chess { // Базовый игровой неймспейс
 			std::string get_label() const;                                  // Возвращает иконку фигуры
 			std::string get_name() const;                                   // Возвращает название фигуры
 			FigureType get_type() const;                                    // Возвращает тип фигуры
-			virtual Figure& get_figure();                                   // Возвращает ссылку на фигуру
+			virtual Figure& get_figure() const;                             // Возвращает ссылку на фигуру
+			virtual Figure* get_pointer() const;                            // Возвращает указатель на фигуру
 
 		private:
 			size_t figure_id_ = 0;
@@ -103,7 +104,8 @@ namespace chess { // Базовый игровой неймспейс
 			King& render_figure() override;
 			King& figure_declaration() override;
 
-			King& get_figure() override;
+			King& get_figure() const override;
+			King* get_pointer() const override;
 		};
 
 		// Фигура Королева
@@ -123,6 +125,9 @@ namespace chess { // Базовый игровой неймспейс
 
 			Queen& render_figure() override;
 			Queen& figure_declaration() override;
+
+			Queen& get_figure() const override;
+			Queen* get_pointer() const override;
 		};
 
 		// Фигура Ладья
@@ -142,6 +147,9 @@ namespace chess { // Базовый игровой неймспейс
 
 			Tower& render_figure() override;
 			Tower& figure_declaration() override;
+
+			Tower& get_figure() const override;
+			Tower* get_pointer() const override;
 		};
 
 		// Фигура Слон
@@ -161,6 +169,9 @@ namespace chess { // Базовый игровой неймспейс
 
 			Officer& render_figure() override;
 			Officer& figure_declaration() override;
+
+			Officer& get_figure() const override;
+			Officer* get_pointer() const override;
 		};
 
 		// Фигура Конь
@@ -180,6 +191,9 @@ namespace chess { // Базовый игровой неймспейс
 
 			Horse& render_figure() override;
 			Horse& figure_declaration() override;
+
+			Horse& get_figure() const override;
+			Horse* get_pointer() const override;
 		};
 
 		// Фигура Пешка
@@ -204,7 +218,9 @@ namespace chess { // Базовый игровой неймспейс
 			Solder& figure_declaration() override;
 
 			Solder& exchange_figure(FigureType);
-			Solder& get_figure() override;
+
+			Solder& get_figure() const override;
+			Solder* get_pointer() const override;
 
 		};
 
@@ -223,13 +239,20 @@ namespace chess { // Базовый игровой неймспейс
 				figure_declaration();
 			}
 
+			Empty(double x, double y) : Figure() {
+				set_coordinates(x, y).figure_declaration();
+			}
+
 			Empty& render_figure() override;
 			Empty& figure_declaration() override;
 
 			Empty& exchange_figure(FigureType);
 
+			Empty& get_figure() const override;
+			Empty* get_pointer() const override;
+
 		};
 
 	} // namespace resource
 
-} // namespace chess_game
+} // namespace chess

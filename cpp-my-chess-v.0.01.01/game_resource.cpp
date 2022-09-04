@@ -101,8 +101,12 @@ namespace chess {
 			return type_;
 		}
 
-		Figure& Figure::get_figure() {
-			return *this;
+		Figure& Figure::get_figure() const {
+			return const_cast<Figure&>(*this) ;
+		}
+
+		Figure* Figure::get_pointer() const {
+			return const_cast<Figure*>(this);
 		}
 
 
@@ -120,6 +124,7 @@ namespace chess {
 
 			if (this->in_game()) {
 				std::cerr << " | находится в игре";
+				std::cerr << " | по координатам {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -131,8 +136,12 @@ namespace chess {
 			return *this;
 		}
 
-		King& King::get_figure() {
-			return *this;
+		King& King::get_figure() const {
+			return const_cast<King&>(*this);
+		}
+
+		King* King::get_pointer() const {
+			return const_cast<King*>(this);
 		}
 
 		// -------------------------- class King END -----------------------------------
@@ -152,6 +161,7 @@ namespace chess {
 
 			if (this->in_game()) {
 				std::cerr << " | находится в игре";
+				std::cerr << " | по координатам {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -161,6 +171,14 @@ namespace chess {
 		Queen& Queen::figure_declaration() {
 			this->set_label("Ш").set_name("Королева").set_type(queen);
 			return *this;
+		}
+
+		Queen& Queen::get_figure() const {
+			return const_cast<Queen&>(*this);
+		}
+
+		Queen* Queen::get_pointer() const {
+			return const_cast<Queen*>(this);
 		}
 
 		// -------------------------- class Queen END ----------------------------------
@@ -180,6 +198,7 @@ namespace chess {
 
 			if (this->in_game()) {
 				std::cerr << " | находится в игре";
+				std::cerr << " | по координатам {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -189,6 +208,14 @@ namespace chess {
 		Tower& Tower::figure_declaration() {
 			this->set_label("Т").set_name("Ладья").set_type(tower);
 			return *this;
+		}
+
+		Tower& Tower::get_figure() const {
+			return const_cast<Tower&>(*this);
+		}
+
+		Tower* Tower::get_pointer() const {
+			return const_cast<Tower*>(this);
 		}
 
 		// -------------------------- class Tower END ----------------------------------
@@ -208,6 +235,7 @@ namespace chess {
 
 			if (this->in_game()) {
 				std::cerr << " | находится в игре";
+				std::cerr << " | по координатам {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -217,6 +245,14 @@ namespace chess {
 		Officer& Officer::figure_declaration() {
 			this->set_label("С").set_name("Слон").set_type(officer);
 			return *this;
+		}
+
+		Officer& Officer::get_figure() const {
+			return const_cast<Officer&>(*this);
+		}
+
+		Officer* Officer::get_pointer() const {
+			return const_cast<Officer*>(this);
 		}
 
 		// -------------------------- class Officer END --------------------------------
@@ -236,6 +272,7 @@ namespace chess {
 
 			if (this->in_game()) {
 				std::cerr << " | находится в игре";
+				std::cerr << " | по координатам {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -245,6 +282,14 @@ namespace chess {
 		Horse& Horse::figure_declaration() {
 			this->set_label("Г").set_name("Конь").set_type(horse);
 			return *this;
+		}
+
+		Horse& Horse::get_figure() const {
+			return const_cast<Horse&>(*this);
+		}
+
+		Horse* Horse::get_pointer() const {
+			return const_cast<Horse*>(this);
 		}
 
 		// -------------------------- class Horse END ------------------------------
@@ -264,6 +309,7 @@ namespace chess {
 
 			if (this->in_game()) {
 				std::cerr << " | находится в игре";
+				std::cerr << " | по координатам {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -285,8 +331,12 @@ namespace chess {
 			return *this;
 		}
 
-		Solder& Solder::get_figure() {
-			return *this;
+		Solder& Solder::get_figure() const {
+			return const_cast<Solder&>(*this);
+		}
+
+		Solder* Solder::get_pointer() const {
+			return const_cast<Solder*>(this);
 		}
 
 		// -------------------------- class Solder END ---------------------------------
@@ -306,6 +356,7 @@ namespace chess {
 
 			if (this->in_game()) {
 				std::cerr << " | находится в игре";
+				std::cerr << " | по координатам {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -324,9 +375,17 @@ namespace chess {
 			return *this;
 		}
 
+		Empty& Empty::get_figure() const {
+			return const_cast<Empty&>(*this);
+		}
+
+		Empty* Empty::get_pointer() const {
+			return const_cast<Empty*>(this);
+		}
+
 		// -------------------------- class Empty END ----------------------------------
 		
 
 	} // namespace resource
 
-} // namespace chess_game
+} // namespace chess
