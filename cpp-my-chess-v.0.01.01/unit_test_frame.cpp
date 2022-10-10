@@ -1,4 +1,4 @@
-#include "unit_test_frame.h"
+ï»¿#include "unit_test_frame.h"
 
 using namespace std::literals;
 
@@ -16,7 +16,7 @@ namespace chess {
 
 					std::cerr << "Figures constructors test begin"sv << std::endl;
 
-					// Òåñòèðîâàíèå äåôîðëòíûõ êîíñòðóêòîðîâ
+					// Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð´ÐµÑ„Ð¾Ñ€Ð»Ñ‚Ð½Ñ‹Ñ… ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð¾Ð²
 					{
 						chess::resource::Figure simple_figure;
 						assert(simple_figure.in_game() == false);
@@ -61,9 +61,9 @@ namespace chess {
 						std::cerr << " - Figures default constructors test complete"sv << std::endl;
 					}
 
-					// Òåñòèðîâàíèå ïàðàìåòðè÷åñêèõ êîíñòðóêòîðîâ
+					// Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ¸Ñ… ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð¾Ð²
 					{
-						// Ïàðàìåòðè÷åñêèé êîíñòðóêòîð ñ çàäàíûì id
+						// ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð·Ð°Ð´Ð°Ð½Ñ‹Ð¼ id
 						{
 							chess::resource::Figure simple_figure(1);
 							assert(simple_figure.get_id() == 1);
@@ -92,7 +92,7 @@ namespace chess {
 							std::cerr << " - Figures parametric(id) constructors test complete"sv << std::endl;
 						}
 
-						// Ïàðàìåòðè÷åñêèé êîíñòðóêòîð ñ çàäàíûì id è color
+						// ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð·Ð°Ð´Ð°Ð½Ñ‹Ð¼ id Ð¸ color
 						{
 							chess::resource::Figure simple_figure(11, grey);
 							assert(simple_figure.get_id() == 11);
@@ -129,7 +129,7 @@ namespace chess {
 							std::cerr << " - Figures parametric(id, color) constructors test complete"sv << std::endl;
 						}
 
-						// Ïàðàìåòðè÷åñêèé êîíñòðóêòîð ñ çàäàíûì id, color è Coordinates
+						// ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð·Ð°Ð´Ð°Ð½Ñ‹Ð¼ id, color Ð¸ Coordinates
 						{
 							chess::resource::Figure simple_figure(11, grey, {2, 1});
 							assert(simple_figure.get_id() == 11);
@@ -185,31 +185,31 @@ namespace chess {
 
 					std::cerr << "Figures method test begin"sv << std::endl;
 
-					// òåñòèðîâàíèå ôóíêöèé Figure
+					// Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¹ Figure
 					{
 
 						chess::resource::Figure unit(1);
 
-						// èçìåíåíèå/ïîëó÷åíèå id ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ id Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_id(2);
 							assert(unit.get_id() == 2);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå öâåòà ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ†Ð²ÐµÑ‚Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_color(black);
 							assert(unit.get_color() == black);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîîðäèíàò ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 0.0, 0.0 }));
 							unit.set_coordinates(1, 4);
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 1.0, 4.0 }));
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå ôëàãà "â èãðå"
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ„Ð»Ð°Ð³Ð° "Ð² Ð¸Ð³Ñ€Ðµ"
 						{
 							assert(unit.in_game() == false);
 							unit.set_in_game();
@@ -218,28 +218,28 @@ namespace chess {
 							assert(unit.in_game() == false);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èêîíêè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸ÐºÐ¾Ð½ÐºÐ¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							assert(unit.get_label() == "");
 							unit.set_label("5");
 							assert(unit.get_label() == "5" && std::stoi(unit.get_label()) == 5);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èìåíè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸Ð¼ÐµÐ½Ð¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							assert(unit.get_name() == "");
-							unit.set_name("òåñò");
-							assert(unit.get_name() == "òåñò");
+							unit.set_name("Ñ‚ÐµÑÑ‚");
+							assert(unit.get_name() == "Ñ‚ÐµÑÑ‚");
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå òèïà ôèãóðû ïî ïîëþ êëàññà
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ‚Ð¸Ð¿Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹ Ð¿Ð¾ Ð¿Ð¾Ð»ÑŽ ÐºÐ»Ð°ÑÑÐ°
 						{
 							assert(unit.get_type() == zero);
 							unit.set_type(queen);
 							assert(unit.get_type() == queen);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîëè÷åñòâà õîäîâ
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð° Ñ…Ð¾Ð´Ð¾Ð²
 						{
 							assert(unit.get_move_count() == 0);
 							unit.move_count_up();
@@ -252,31 +252,31 @@ namespace chess {
 						
 					}
 
-					// òåñòèðîâàíèå ôóíêöèé King
+					// Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¹ King
 					{
 
 						chess::resource::King unit(1);
 
-						// èçìåíåíèå/ïîëó÷åíèå id ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ id Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_id(2);
 							assert(unit.get_id() == 2);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå öâåòà ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ†Ð²ÐµÑ‚Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_color(black);
 							assert(unit.get_color() == black);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîîðäèíàò ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 0.0, 0.0 }));
 							unit.set_coordinates(1, 4);
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 1.0, 4.0 }));
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå ôëàãà "â èãðå"
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ„Ð»Ð°Ð³Ð° "Ð² Ð¸Ð³Ñ€Ðµ"
 						{
 							assert(unit.in_game() == false);
 							unit.set_in_game();
@@ -285,28 +285,28 @@ namespace chess {
 							assert(unit.in_game() == false);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èêîíêè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸ÐºÐ¾Ð½ÐºÐ¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
-							assert(unit.get_label() == "Ê");
+							assert(unit.get_label() == "Ðš");
 							unit.set_label("5");
 							assert(unit.get_label() == "5" && std::stoi(unit.get_label()) == 5);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èìåíè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸Ð¼ÐµÐ½Ð¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
-							assert(unit.get_name() == "Êîðîëü");
-							unit.set_name("òåñò");
-							assert(unit.get_name() == "òåñò");
+							assert(unit.get_name() == "ÐšÐ¾Ñ€Ð¾Ð»ÑŒ");
+							unit.set_name("Ñ‚ÐµÑÑ‚");
+							assert(unit.get_name() == "Ñ‚ÐµÑÑ‚");
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå òèïà ôèãóðû ïî ïîëþ êëàññà
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ‚Ð¸Ð¿Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹ Ð¿Ð¾ Ð¿Ð¾Ð»ÑŽ ÐºÐ»Ð°ÑÑÐ°
 						{
 							assert(unit.get_type() == king);
 							unit.set_type(queen);
 							assert(unit.get_type() == queen);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîëè÷åñòâà õîäîâ
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð° Ñ…Ð¾Ð´Ð¾Ð²
 						{
 							assert(unit.get_move_count() == 0);
 							unit.move_count_up();
@@ -319,31 +319,31 @@ namespace chess {
 
 					}
 
-					// òåñòèðîâàíèå ôóíêöèé Queen
+					// Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¹ Queen
 					{
 
 						chess::resource::Queen unit(1);
 
-						// èçìåíåíèå/ïîëó÷åíèå id ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ id Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_id(2);
 							assert(unit.get_id() == 2);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå öâåòà ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ†Ð²ÐµÑ‚Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_color(black);
 							assert(unit.get_color() == black);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîîðäèíàò ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 0.0, 0.0 }));
 							unit.set_coordinates(1, 4);
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 1.0, 4.0 }));
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå ôëàãà "â èãðå"
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ„Ð»Ð°Ð³Ð° "Ð² Ð¸Ð³Ñ€Ðµ"
 						{
 							assert(unit.in_game() == false);
 							unit.set_in_game();
@@ -352,28 +352,28 @@ namespace chess {
 							assert(unit.in_game() == false);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èêîíêè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸ÐºÐ¾Ð½ÐºÐ¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
-							assert(unit.get_label() == "Ø");
+							assert(unit.get_label() == "Ð¨");
 							unit.set_label("5");
 							assert(unit.get_label() == "5" && std::stoi(unit.get_label()) == 5);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èìåíè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸Ð¼ÐµÐ½Ð¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
-							assert(unit.get_name() == "Êîðîëåâà");
-							unit.set_name("òåñò");
-							assert(unit.get_name() == "òåñò");
+							assert(unit.get_name() == "ÐšÐ¾Ñ€Ð¾Ð»ÐµÐ²Ð°");
+							unit.set_name("Ñ‚ÐµÑÑ‚");
+							assert(unit.get_name() == "Ñ‚ÐµÑÑ‚");
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå òèïà ôèãóðû ïî ïîëþ êëàññà
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ‚Ð¸Ð¿Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹ Ð¿Ð¾ Ð¿Ð¾Ð»ÑŽ ÐºÐ»Ð°ÑÑÐ°
 						{
 							assert(unit.get_type() == queen);
 							unit.set_type(zero);
 							assert(unit.get_type() == zero);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîëè÷åñòâà õîäîâ
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð° Ñ…Ð¾Ð´Ð¾Ð²
 						{
 							assert(unit.get_move_count() == 0);
 							unit.move_count_up();
@@ -386,31 +386,31 @@ namespace chess {
 
 					}
 
-					// òåñòèðîâàíèå ôóíêöèé Tower
+					// Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¹ Tower
 					{
 
 						chess::resource::Tower unit(1);
 
-						// èçìåíåíèå/ïîëó÷åíèå id ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ id Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_id(2);
 							assert(unit.get_id() == 2);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå öâåòà ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ†Ð²ÐµÑ‚Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_color(black);
 							assert(unit.get_color() == black);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîîðäèíàò ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 0.0, 0.0 }));
 							unit.set_coordinates(1, 4);
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 1.0, 4.0 }));
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå ôëàãà "â èãðå"
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ„Ð»Ð°Ð³Ð° "Ð² Ð¸Ð³Ñ€Ðµ"
 						{
 							assert(unit.in_game() == false);
 							unit.set_in_game();
@@ -419,28 +419,28 @@ namespace chess {
 							assert(unit.in_game() == false);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èêîíêè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸ÐºÐ¾Ð½ÐºÐ¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
-							assert(unit.get_label() == "Ò");
+							assert(unit.get_label() == "Ð¢");
 							unit.set_label("5");
 							assert(unit.get_label() == "5" && std::stoi(unit.get_label()) == 5);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èìåíè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸Ð¼ÐµÐ½Ð¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
-							assert(unit.get_name() == "Ëàäüÿ");
-							unit.set_name("òåñò");
-							assert(unit.get_name() == "òåñò");
+							assert(unit.get_name() == "Ð›Ð°Ð´ÑŒÑ");
+							unit.set_name("Ñ‚ÐµÑÑ‚");
+							assert(unit.get_name() == "Ñ‚ÐµÑÑ‚");
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå òèïà ôèãóðû ïî ïîëþ êëàññà
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ‚Ð¸Ð¿Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹ Ð¿Ð¾ Ð¿Ð¾Ð»ÑŽ ÐºÐ»Ð°ÑÑÐ°
 						{
 							assert(unit.get_type() == tower);
 							unit.set_type(zero);
 							assert(unit.get_type() == zero);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîëè÷åñòâà õîäîâ
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð° Ñ…Ð¾Ð´Ð¾Ð²
 						{
 							assert(unit.get_move_count() == 0);
 							unit.move_count_up();
@@ -453,31 +453,31 @@ namespace chess {
 
 					}
 
-					// òåñòèðîâàíèå ôóíêöèé Officer
+					// Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¹ Officer
 					{
 
 						chess::resource::Officer unit(1);
 
-						// èçìåíåíèå/ïîëó÷åíèå id ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ id Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_id(2);
 							assert(unit.get_id() == 2);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå öâåòà ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ†Ð²ÐµÑ‚Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_color(black);
 							assert(unit.get_color() == black);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîîðäèíàò ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 0.0, 0.0 }));
 							unit.set_coordinates(1, 4);
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 1.0, 4.0 }));
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå ôëàãà "â èãðå"
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ„Ð»Ð°Ð³Ð° "Ð² Ð¸Ð³Ñ€Ðµ"
 						{
 							assert(unit.in_game() == false);
 							unit.set_in_game();
@@ -486,28 +486,28 @@ namespace chess {
 							assert(unit.in_game() == false);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èêîíêè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸ÐºÐ¾Ð½ÐºÐ¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
-							assert(unit.get_label() == "Ñ");
+							assert(unit.get_label() == "Ð¡");
 							unit.set_label("5");
 							assert(unit.get_label() == "5" && std::stoi(unit.get_label()) == 5);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èìåíè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸Ð¼ÐµÐ½Ð¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
-							assert(unit.get_name() == "Ñëîí");
-							unit.set_name("òåñò");
-							assert(unit.get_name() == "òåñò");
+							assert(unit.get_name() == "Ð¡Ð»Ð¾Ð½");
+							unit.set_name("Ñ‚ÐµÑÑ‚");
+							assert(unit.get_name() == "Ñ‚ÐµÑÑ‚");
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå òèïà ôèãóðû ïî ïîëþ êëàññà
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ‚Ð¸Ð¿Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹ Ð¿Ð¾ Ð¿Ð¾Ð»ÑŽ ÐºÐ»Ð°ÑÑÐ°
 						{
 							assert(unit.get_type() == officer);
 							unit.set_type(zero);
 							assert(unit.get_type() == zero);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîëè÷åñòâà õîäîâ
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð° Ñ…Ð¾Ð´Ð¾Ð²
 						{
 							assert(unit.get_move_count() == 0);
 							unit.move_count_up();
@@ -520,31 +520,31 @@ namespace chess {
 
 					}
 
-					// òåñòèðîâàíèå ôóíêöèé Horse
+					// Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¹ Horse
 					{
 
 						chess::resource::Horse unit(1);
 
-						// èçìåíåíèå/ïîëó÷åíèå id ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ id Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_id(2);
 							assert(unit.get_id() == 2);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå öâåòà ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ†Ð²ÐµÑ‚Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_color(black);
 							assert(unit.get_color() == black);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîîðäèíàò ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 0.0, 0.0 }));
 							unit.set_coordinates(1, 4);
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 1.0, 4.0 }));
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå ôëàãà "â èãðå"
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ„Ð»Ð°Ð³Ð° "Ð² Ð¸Ð³Ñ€Ðµ"
 						{
 							assert(unit.in_game() == false);
 							unit.set_in_game();
@@ -553,28 +553,28 @@ namespace chess {
 							assert(unit.in_game() == false);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èêîíêè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸ÐºÐ¾Ð½ÐºÐ¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
-							assert(unit.get_label() == "Ã");
+							assert(unit.get_label() == "Ð“");
 							unit.set_label("5");
 							assert(unit.get_label() == "5" && std::stoi(unit.get_label()) == 5);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èìåíè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸Ð¼ÐµÐ½Ð¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
-							assert(unit.get_name() == "Êîíü");
-							unit.set_name("òåñò");
-							assert(unit.get_name() == "òåñò");
+							assert(unit.get_name() == "ÐšÐ¾Ð½ÑŒ");
+							unit.set_name("Ñ‚ÐµÑÑ‚");
+							assert(unit.get_name() == "Ñ‚ÐµÑÑ‚");
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå òèïà ôèãóðû ïî ïîëþ êëàññà
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ‚Ð¸Ð¿Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹ Ð¿Ð¾ Ð¿Ð¾Ð»ÑŽ ÐºÐ»Ð°ÑÑÐ°
 						{
 							assert(unit.get_type() == horse);
 							unit.set_type(zero);
 							assert(unit.get_type() == zero);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîëè÷åñòâà õîäîâ
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð° Ñ…Ð¾Ð´Ð¾Ð²
 						{
 							assert(unit.get_move_count() == 0);
 							unit.move_count_up();
@@ -587,31 +587,31 @@ namespace chess {
 
 					}
 
-					// òåñòèðîâàíèå ôóíêöèé Solder
+					// Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¹ Solder
 					{
 
 						chess::resource::Solder unit(1);
 
-						// èçìåíåíèå/ïîëó÷åíèå id ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ id Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_id(2);
 							assert(unit.get_id() == 2);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå öâåòà ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ†Ð²ÐµÑ‚Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_color(black);
 							assert(unit.get_color() == black);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîîðäèíàò ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 0.0, 0.0 }));
 							unit.set_coordinates(1, 4);
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 1.0, 4.0 }));
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå ôëàãà "â èãðå"
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ„Ð»Ð°Ð³Ð° "Ð² Ð¸Ð³Ñ€Ðµ"
 						{
 							assert(unit.in_game() == false);
 							unit.set_in_game();
@@ -620,28 +620,28 @@ namespace chess {
 							assert(unit.in_game() == false);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èêîíêè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸ÐºÐ¾Ð½ÐºÐ¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
-							assert(unit.get_label() == "Ï");
+							assert(unit.get_label() == "ÐŸ");
 							unit.set_label("5");
 							assert(unit.get_label() == "5" && std::stoi(unit.get_label()) == 5);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èìåíè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸Ð¼ÐµÐ½Ð¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
-							assert(unit.get_name() == "Ïåøêà");
-							unit.set_name("òåñò");
-							assert(unit.get_name() == "òåñò");
+							assert(unit.get_name() == "ÐŸÐµÑˆÐºÐ°");
+							unit.set_name("Ñ‚ÐµÑÑ‚");
+							assert(unit.get_name() == "Ñ‚ÐµÑÑ‚");
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå òèïà ôèãóðû ïî ïîëþ êëàññà
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ‚Ð¸Ð¿Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹ Ð¿Ð¾ Ð¿Ð¾Ð»ÑŽ ÐºÐ»Ð°ÑÑÐ°
 						{
 							assert(unit.get_type() == solder);
 							unit.set_type(zero);
 							assert(unit.get_type() == zero);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîëè÷åñòâà õîäîâ
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð° Ñ…Ð¾Ð´Ð¾Ð²
 						{
 							assert(unit.get_move_count() == 0);
 							unit.move_count_up();
@@ -654,32 +654,32 @@ namespace chess {
 
 					}
 
-					// òåñòèðîâàíèå ôóíêöèé Empty
+					// Ñ‚ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¹ Empty
 					{
 
 						chess::resource::Empty unit(1);
 
-						// èçìåíåíèå/ïîëó÷åíèå id ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ id Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							unit.set_id(2);
 							assert(unit.get_id() == 2);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå öâåòà ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ†Ð²ÐµÑ‚Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							assert(unit.get_color() == grey);
 							unit.set_color(black);
 							assert(unit.get_color() == black);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîîðäèíàò ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 0.0, 0.0 }));
 							unit.set_coordinates(1, 4);
 							assert(unit.get_coordinates() == chess::geo::Coordinates({ 1.0, 4.0 }));
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå ôëàãà "â èãðå"
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ„Ð»Ð°Ð³Ð° "Ð² Ð¸Ð³Ñ€Ðµ"
 						{
 							assert(unit.in_game() == false);
 							unit.set_in_game();
@@ -688,28 +688,28 @@ namespace chess {
 							assert(unit.in_game() == false);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èêîíêè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸ÐºÐ¾Ð½ÐºÐ¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
 							assert(unit.get_label() == ".");
 							unit.set_label("5");
 							assert(unit.get_label() == "5" && std::stoi(unit.get_label()) == 5);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå èìåíè ôèãóðû
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ð¸Ð¼ÐµÐ½Ð¸ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹
 						{
-							assert(unit.get_name() == "Ïóñòî");
-							unit.set_name("òåñò");
-							assert(unit.get_name() == "òåñò");
+							assert(unit.get_name() == "ÐŸÑƒÑÑ‚Ð¾");
+							unit.set_name("Ñ‚ÐµÑÑ‚");
+							assert(unit.get_name() == "Ñ‚ÐµÑÑ‚");
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå òèïà ôèãóðû ïî ïîëþ êëàññà
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ Ñ‚Ð¸Ð¿Ð° Ñ„Ð¸Ð³ÑƒÑ€Ñ‹ Ð¿Ð¾ Ð¿Ð¾Ð»ÑŽ ÐºÐ»Ð°ÑÑÐ°
 						{
 							assert(unit.get_type() == zero);
 							unit.set_type(horse);
 							assert(unit.get_type() == horse);
 						}
 
-						// èçìåíåíèå/ïîëó÷åíèå êîëè÷åñòâà õîäîâ
+						// Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ðµ/Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð° Ñ…Ð¾Ð´Ð¾Ð²
 						{
 							assert(unit.get_move_count() == 0);
 							unit.move_count_up();
@@ -739,7 +739,7 @@ namespace chess {
 
 					std::cerr << "Deck constructors test begin"sv << std::endl;
 
-					// Òåñòèðîâàíèå äåôîðëòíûõ êîíñòðóêòîðîâ
+					// Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð´ÐµÑ„Ð¾Ñ€Ð»Ñ‚Ð½Ñ‹Ñ… ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð¾Ð²
 					{
 						chess::deck::Deck test_deck;
 						test_deck.set_clear_deck().set_default_figures();
@@ -747,15 +747,15 @@ namespace chess {
 						std::cerr << " - Deck default constructors test complete"sv << std::endl;
 					}
 
-					// Òåñòèðîâàíèå ïàðàìåòðè÷åñêèõ êîíñòðóêòîðîâ
+					// Ð¢ÐµÑÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ¸Ñ… ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ð¾Ð²
 					{
-						// Ïàðàìåòðè÷åñêèé êîíñòðóêòîð ñ çàäàíûì id
+						// ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð·Ð°Ð´Ð°Ð½Ñ‹Ð¼ id
 						{							
 
 							std::cerr << " - Deck parametric(id) constructors test complete"sv << std::endl;
 						}
 
-						// Ïàðàìåòðè÷åñêèé êîíñòðóêòîð ñ çàäàíûì id è color
+						// ÐŸÐ°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð·Ð°Ð´Ð°Ð½Ñ‹Ð¼ id Ð¸ color
 						{							
 
 							std::cerr << " - Deck parametric(id, color) constructors test complete"sv << std::endl;
@@ -806,7 +806,7 @@ namespace chess {
 		} // modules_tests
 
 		void RunAllTestes() {
-			std::cerr << "Âûïîëíÿþ âñå òåñòû ìîäóëÿ"sv << std::endl;
+			std::cerr << "Ð’Ñ‹Ð¿Ð¾Ð»Ð½ÑÑŽ Ð²ÑÐµ Ñ‚ÐµÑÑ‚Ñ‹ Ð¼Ð¾Ð´ÑƒÐ»Ñ"sv << std::endl;
 			chess::test_frame::resources_tests::figures_tests::FiguresTest figures_test;
 			chess::test_frame::modules_tests::deck_tests::DeckTest deck_test;
 		}

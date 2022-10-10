@@ -1,4 +1,4 @@
-#include "game_resource.h"
+Ôªø#include "game_resource.h"
 
 namespace chess {
 
@@ -9,12 +9,12 @@ namespace chess {
 
 
 		Figure& Figure::render_figure() {
-			std::cerr << "·Î‡-·Î‡-·Î‡" << std::endl;
+			std::cerr << "–±–ª–∞-–±–ª–∞-–±–ª–∞" << std::endl;
 			return *this;
 		}
 
 		Figure& Figure::figure_declaration() {
-			this->set_label(".").set_name("œÛÒÚÓ").set_type(zero);
+			this->set_label(".").set_name("–ü—É—Å—Ç–æ").set_type(zero);
 			return *this;
 		}
 
@@ -119,17 +119,17 @@ namespace chess {
 		
 		King& King::render_figure() {
 			if (this->get_color() == FigureColor::white) {
-				std::cerr << "¡ÂÎ˚È ";
+				std::cerr << "–ë–µ–ª—ã–π ";
 			}
 			else {
-				std::cerr << "◊ÂÌ˚È ";
+				std::cerr << "–ß–µ—Ä–Ω—ã–π ";
 			}
 
-			std::cerr << " ÓÓÎ¸ | id: " << this->get_id();
+			std::cerr << "–ö–æ—Ä–æ–ª—å | id: " << this->get_id();
 
 			if (this->in_game()) {
-				std::cerr << " | Ì‡ıÓ‰ËÚÒˇ ‚ Ë„Â";
-				std::cerr << " | ÔÓ ÍÓÓ‰ËÌ‡Ú‡Ï {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
+				std::cerr << " | –Ω–∞—Ö–æ–¥–∏—Ç—Å—è –≤ –∏–≥—Ä–µ";
+				std::cerr << " | –ø–æ –∫–æ–æ—Ä–¥–∏–Ω–∞—Ç–∞–º {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -137,7 +137,7 @@ namespace chess {
 		}
 
 		King& King::figure_declaration() {
-			this->set_label(" ").set_name(" ÓÓÎ¸").set_type(king);
+			this->set_label("–ö").set_name("–ö–æ—Ä–æ–ª—å").set_type(king);
 			return *this;
 		}
 
@@ -156,17 +156,17 @@ namespace chess {
 
 		Queen& Queen::render_figure() {
 			if (this->get_color() == FigureColor::white) {
-				std::cerr << "¡ÂÎ‡ˇ ";
+				std::cerr << "–ë–µ–ª–∞—è ";
 			}
 			else {
-				std::cerr << "◊ÂÌ‡ˇ ";
+				std::cerr << "–ß–µ—Ä–Ω–∞—è ";
 			}
 
-			std::cerr << " ÓÓÎÂ‚‡ | id: " << this->get_id();
+			std::cerr << "–ö–æ—Ä–æ–ª–µ–≤–∞ | id: " << this->get_id();
 
 			if (this->in_game()) {
-				std::cerr << " | Ì‡ıÓ‰ËÚÒˇ ‚ Ë„Â";
-				std::cerr << " | ÔÓ ÍÓÓ‰ËÌ‡Ú‡Ï {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
+				std::cerr << " | –Ω–∞—Ö–æ–¥–∏—Ç—Å—è –≤ –∏–≥—Ä–µ";
+				std::cerr << " | –ø–æ –∫–æ–æ—Ä–¥–∏–Ω–∞—Ç–∞–º {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -174,7 +174,7 @@ namespace chess {
 		}
 
 		Queen& Queen::figure_declaration() {
-			this->set_label("ÿ").set_name(" ÓÓÎÂ‚‡").set_type(queen);
+			this->set_label("–®").set_name("–ö–æ—Ä–æ–ª–µ–≤–∞").set_type(queen);
 			return *this;
 		}
 
@@ -193,17 +193,17 @@ namespace chess {
 
 		Tower& Tower::render_figure() {
 			if (this->get_color() == FigureColor::white) {
-				std::cerr << "¡ÂÎ‡ˇ ";
+				std::cerr << "–ë–µ–ª–∞—è ";
 			}
 			else {
-				std::cerr << "◊ÂÌ‡ˇ ";
+				std::cerr << "–ß–µ—Ä–Ω–∞—è ";
 			}
 
-			std::cerr << "À‡‰¸ˇ | id: " << this->get_id();
+			std::cerr << "–õ–∞–¥—å—è | id: " << this->get_id();
 
 			if (this->in_game()) {
-				std::cerr << " | Ì‡ıÓ‰ËÚÒˇ ‚ Ë„Â";
-				std::cerr << " | ÔÓ ÍÓÓ‰ËÌ‡Ú‡Ï {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
+				std::cerr << " | –Ω–∞—Ö–æ–¥–∏—Ç—Å—è –≤ –∏–≥—Ä–µ";
+				std::cerr << " | –ø–æ –∫–æ–æ—Ä–¥–∏–Ω–∞—Ç–∞–º {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -211,7 +211,7 @@ namespace chess {
 		}
 
 		Tower& Tower::figure_declaration() {
-			this->set_label("“").set_name("À‡‰¸ˇ").set_type(tower);
+			this->set_label("–¢").set_name("–õ–∞–¥—å—è").set_type(tower);
 			return *this;
 		}
 
@@ -230,17 +230,17 @@ namespace chess {
 
 		Officer& Officer::render_figure() {
 			if (this->get_color() == FigureColor::white) {
-				std::cerr << "¡ÂÎ˚È ";
+				std::cerr << "–ë–µ–ª—ã–π ";
 			}
 			else {
-				std::cerr << "◊ÂÌ˚È ";
+				std::cerr << "–ß–µ—Ä–Ω—ã–π ";
 			}
 
-			std::cerr << "—ÎÓÌ | id: " << this->get_id();
+			std::cerr << "–°–ª–æ–Ω | id: " << this->get_id();
 
 			if (this->in_game()) {
-				std::cerr << " | Ì‡ıÓ‰ËÚÒˇ ‚ Ë„Â";
-				std::cerr << " | ÔÓ ÍÓÓ‰ËÌ‡Ú‡Ï {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
+				std::cerr << " | –Ω–∞—Ö–æ–¥–∏—Ç—Å—è –≤ –∏–≥—Ä–µ";
+				std::cerr << " | –ø–æ –∫–æ–æ—Ä–¥–∏–Ω–∞—Ç–∞–º {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -248,7 +248,7 @@ namespace chess {
 		}
 
 		Officer& Officer::figure_declaration() {
-			this->set_label("—").set_name("—ÎÓÌ").set_type(officer);
+			this->set_label("–°").set_name("–°–ª–æ–Ω").set_type(officer);
 			return *this;
 		}
 
@@ -267,17 +267,17 @@ namespace chess {
 
 		Horse& Horse::render_figure() {
 			if (this->get_color() == FigureColor::white) {
-				std::cerr << "¡ÂÎ˚È ";
+				std::cerr << "–ë–µ–ª—ã–π ";
 			}
 			else {
-				std::cerr << "◊ÂÌ˚È ";
+				std::cerr << "–ß–µ—Ä–Ω—ã–π ";
 			}
 
-			std::cerr << " ÓÌ¸ | id: " << this->get_id();
+			std::cerr << "–ö–æ–Ω—å | id: " << this->get_id();
 
 			if (this->in_game()) {
-				std::cerr << " | Ì‡ıÓ‰ËÚÒˇ ‚ Ë„Â";
-				std::cerr << " | ÔÓ ÍÓÓ‰ËÌ‡Ú‡Ï {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
+				std::cerr << " | –Ω–∞—Ö–æ–¥–∏—Ç—Å—è –≤ –∏–≥—Ä–µ";
+				std::cerr << " | –ø–æ –∫–æ–æ—Ä–¥–∏–Ω–∞—Ç–∞–º {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -285,7 +285,7 @@ namespace chess {
 		}
 
 		Horse& Horse::figure_declaration() {
-			this->set_label("√").set_name(" ÓÌ¸").set_type(horse);
+			this->set_label("–ì").set_name("–ö–æ–Ω—å").set_type(horse);
 			return *this;
 		}
 
@@ -304,17 +304,17 @@ namespace chess {
 		
 		Solder& Solder::render_figure() {
 			if (this->get_color() == FigureColor::white) {
-				std::cerr << "¡ÂÎ‡ˇ ";
+				std::cerr << "–ë–µ–ª–∞—è ";
 			}
 			else {
-				std::cerr << "◊ÂÌ‡ˇ ";
+				std::cerr << "–ß–µ—Ä–Ω–∞—è ";
 			}
 
-			std::cerr << "œÂ¯Í‡ | id: " << this->get_id();
+			std::cerr << "–ü–µ—à–∫–∞ | id: " << this->get_id();
 
 			if (this->in_game()) {
-				std::cerr << " | Ì‡ıÓ‰ËÚÒˇ ‚ Ë„Â";
-				std::cerr << " | ÔÓ ÍÓÓ‰ËÌ‡Ú‡Ï {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
+				std::cerr << " | –Ω–∞—Ö–æ–¥–∏—Ç—Å—è –≤ –∏–≥—Ä–µ";
+				std::cerr << " | –ø–æ –∫–æ–æ—Ä–¥–∏–Ω–∞—Ç–∞–º {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -322,16 +322,16 @@ namespace chess {
 		}
 
 		Solder& Solder::figure_declaration() {
-			this->set_label("œ").set_name("œÂ¯Í‡").set_type(solder);
+			this->set_label("–ü").set_name("–ü–µ—à–∫–∞").set_type(solder);
 			return *this;
 		}
 
 		Solder& Solder::exchange_figure(FigureType type) {
 			if (type == FigureType::king) {
-				std::cerr << "’Ó˜ÂÚ ÔÂ‚‡ÚËÚ¸Òˇ ‚ ÍÓÓÎˇ!" << std::endl;
+				std::cerr << "–•–æ—á–µ—Ç –ø—Ä–µ–≤—Ä–∞—Ç–∏—Ç—å—Å—è –≤ –∫–æ—Ä–æ–ª—è!" << std::endl;
 			} 
 			else if (type == FigureType::queen) {
-				std::cerr << "’Ó˜ÂÚ ÒÚ‡Ú¸ ÍÓÓÎÂ‚ÓÈ!" << std::endl;
+				std::cerr << "–•–æ—á–µ—Ç —Å—Ç–∞—Ç—å –∫–æ—Ä–æ–ª–µ–≤–æ–π!" << std::endl;
 			}
 			return *this;
 		}
@@ -351,17 +351,17 @@ namespace chess {
 
 		Empty& Empty::render_figure() {
 			if (this->get_color() == FigureColor::white) {
-				std::cerr << "¡ÂÎ‡ˇ ";
+				std::cerr << "–ë–µ–ª–∞—è ";
 			}
 			else {
-				std::cerr << "◊ÂÌ‡ˇ ";
+				std::cerr << "–ß–µ—Ä–Ω–∞—è ";
 			}
 
-			std::cerr << "œÂ¯Í‡ | id: " << this->get_id();
+			std::cerr << "–ü–µ—à–∫–∞ | id: " << this->get_id();
 
 			if (this->in_game()) {
-				std::cerr << " | Ì‡ıÓ‰ËÚÒˇ ‚ Ë„Â";
-				std::cerr << " | ÔÓ ÍÓÓ‰ËÌ‡Ú‡Ï {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
+				std::cerr << " | –Ω–∞—Ö–æ–¥–∏—Ç—Å—è –≤ –∏–≥—Ä–µ";
+				std::cerr << " | –ø–æ –∫–æ–æ—Ä–¥–∏–Ω–∞—Ç–∞–º {" << this->get_coordinates().x_ << ", " << this->get_coordinates().y_ << "}";
 			}
 
 			std::cerr << std::endl;
@@ -369,13 +369,13 @@ namespace chess {
 		}
 
 		Empty& Empty::figure_declaration() {
-			this->set_label(".").set_name("œÛÒÚÓ");
+			this->set_label(".").set_name("–ü—É—Å—Ç–æ");
 			return *this;
 		}
 
 		Empty& Empty::exchange_figure(FigureType type) {
 			if (type == FigureType::king) {
-				std::cerr << "’Ó˜Û ÔÂ‚‡ÚËÚ¸Òˇ ‚ ÍÓÓÎˇ!" << std::endl;
+				std::cerr << "–•–æ—á—É –ø—Ä–µ–≤—Ä–∞—Ç–∏—Ç—å—Å—è –≤ –∫–æ—Ä–æ–ª—è!" << std::endl;
 			}
 			return *this;
 		}

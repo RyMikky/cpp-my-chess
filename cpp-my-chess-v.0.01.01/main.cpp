@@ -1,6 +1,6 @@
-//#include "chess_deck.h" // Движок доски
-//#include "chess_game.h" // Движок игры
-#include "game_menu.h" // Меню игры
+п»ї//#include "chess_deck.h" // Р”РІРёР¶РѕРє РґРѕСЃРєРё
+//#include "chess_game.h" // Р”РІРёР¶РѕРє РёРіСЂС‹
+#include "game_menu.h" // РњРµРЅСЋ РёРіСЂС‹
 #include "game_resource.h"
 #include "unit_test_frame.h"
 

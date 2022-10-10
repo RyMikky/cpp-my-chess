@@ -1,10 +1,10 @@
-#include "game_chess_deck.h"
+п»ї#include "game_chess_deck.h"
 
 namespace chess {
 
 	namespace deck {
 
-		// заполненение поля пустыми клетками
+		// Р·Р°РїРѕР»РЅРµРЅРµРЅРёРµ РїРѕР»СЏ РїСѓСЃС‚С‹РјРё РєР»РµС‚РєР°РјРё
 		Deck& Deck::set_clear_deck() {
 
 			if (deck_) {
@@ -42,11 +42,11 @@ namespace chess {
 			return *this;
 		}
 
-		// заполненение поля согласно стандартной расстановки
+		// Р·Р°РїРѕР»РЅРµРЅРµРЅРёРµ РїРѕР»СЏ СЃРѕРіР»Р°СЃРЅРѕ СЃС‚Р°РЅРґР°СЂС‚РЅРѕР№ СЂР°СЃСЃС‚Р°РЅРѕРІРєРё
 		Deck& Deck::set_default_figures() {
 			if (IsEmpty) {
-				this->set_white_figures();                  // установить на доску белые фигуры
-				this->set_black_figures();                  // установить на доску черные фигуры
+				this->set_white_figures();                  // СѓСЃС‚Р°РЅРѕРІРёС‚СЊ РЅР° РґРѕСЃРєСѓ Р±РµР»С‹Рµ С„РёРіСѓСЂС‹
+				this->set_black_figures();                  // СѓСЃС‚Р°РЅРѕРІРёС‚СЊ РЅР° РґРѕСЃРєСѓ С‡РµСЂРЅС‹Рµ С„РёРіСѓСЂС‹
 				IsEmpty = false;
 			}
 			else {
@@ -57,10 +57,10 @@ namespace chess {
 			return *this;
 		}
 
-		// установка белых фигур
+		// СѓСЃС‚Р°РЅРѕРІРєР° Р±РµР»С‹С… С„РёРіСѓСЂ
 		Deck& Deck::set_white_figures() {
 
-			// устанавливаем пешки
+			// СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РїРµС€РєРё
 			std::vector<std::shared_ptr<chess::resource::Figure>>& white_solder_line_ = deck_.get()->field_[6];
 
 			for (size_t i = 0; i < 8; ++i) {
@@ -69,7 +69,7 @@ namespace chess {
 					(figures_id_++, chess::resource::white, chess::geo::Coordinates(6, i)));
 			}
 
-			// устанавливаем основные фигуры
+			// СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РѕСЃРЅРѕРІРЅС‹Рµ С„РёРіСѓСЂС‹
 			std::vector<std::shared_ptr<chess::resource::Figure>>& white_figures_line_ = deck_.get()->field_[7];
 
 			for (size_t i = 0; i < 8; ++i) {
@@ -103,10 +103,10 @@ namespace chess {
 			return *this;
 		}
 
-		// установка черных фигур
+		// СѓСЃС‚Р°РЅРѕРІРєР° С‡РµСЂРЅС‹С… С„РёРіСѓСЂ
 		Deck& Deck::set_black_figures() {
 
-			// устанавливаем пешки
+			// СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РїРµС€РєРё
 			std::vector<std::shared_ptr<chess::resource::Figure>>& black_solder_line_ = deck_.get()->field_[1];
 
 			for (size_t i = 0; i < 8; ++i) {
@@ -115,7 +115,7 @@ namespace chess {
 					(figures_id_++, chess::resource::black, chess::geo::Coordinates(1, i)));
 			}
 
-			// устанавливаем основные фигуры
+			// СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РѕСЃРЅРѕРІРЅС‹Рµ С„РёРіСѓСЂС‹
 			std::vector<std::shared_ptr<chess::resource::Figure>>& white_figures_line_ = deck_.get()->field_[0];
 
 			for (size_t i = 0; i < 8; ++i) {
