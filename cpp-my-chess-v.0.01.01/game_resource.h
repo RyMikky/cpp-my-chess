@@ -43,6 +43,12 @@ namespace chess { // Базовый игровой неймспейс
 				, color_(std::move(color)) {
 			}
 
+			Figure(size_t id, FigureColor color, Coordinates coord)
+				: figure_id_(std::move(id))
+				, color_(std::move(color))
+				, coord_(std::move(coord)) {
+			}
+
 			virtual ~Figure() = default;
 
 			virtual Figure& render_figure();                                // Вывод по фигуре
@@ -54,6 +60,7 @@ namespace chess { // Базовый игровой неймспейс
 			// ------------------------ методы задачи параметров фигуры --------------------------------------------
 
 			Figure& set_coordinates(double, double);                        // Задать координаты фигуры
+			Figure& set_coordinates(Coordinates);                           // Задать координаты фигуры
 			Figure& set_in_game();                                          // Задать статус фигуры "в игре"
 			Figure& set_out_game();                                         // Задать статус фигуры "вне игры"
 			Figure& set_color(FigureColor);                                 // Задать цвет фигруы
@@ -101,6 +108,10 @@ namespace chess { // Базовый игровой неймспейс
 				figure_declaration();
 			}
 
+			King(size_t id, FigureColor color, Coordinates coord) : Figure(id, color, coord) {
+				figure_declaration().set_in_game();
+			}
+
 			King& render_figure() override;
 			King& figure_declaration() override;
 
@@ -121,6 +132,10 @@ namespace chess { // Базовый игровой неймспейс
 
 			Queen(size_t id, FigureColor color) : Figure(id, color) {
 				figure_declaration();
+			}
+
+			Queen(size_t id, FigureColor color, Coordinates coord) : Figure(id, color, coord) {
+				figure_declaration().set_in_game();
 			}
 
 			Queen& render_figure() override;
@@ -145,6 +160,10 @@ namespace chess { // Базовый игровой неймспейс
 				figure_declaration();
 			}
 
+			Tower(size_t id, FigureColor color, Coordinates coord) : Figure(id, color, coord) {
+				figure_declaration().set_in_game();
+			}
+
 			Tower& render_figure() override;
 			Tower& figure_declaration() override;
 
@@ -165,6 +184,10 @@ namespace chess { // Базовый игровой неймспейс
 
 			Officer(size_t id, FigureColor color) : Figure(id, color) {
 				figure_declaration();
+			}
+
+			Officer(size_t id, FigureColor color, Coordinates coord) : Figure(id, color, coord) {
+				figure_declaration().set_in_game();
 			}
 
 			Officer& render_figure() override;
@@ -189,6 +212,10 @@ namespace chess { // Базовый игровой неймспейс
 				figure_declaration();
 			}
 
+			Horse(size_t id, FigureColor color, Coordinates coord) : Figure(id, color, coord) {
+				figure_declaration().set_in_game();
+			}
+
 			Horse& render_figure() override;
 			Horse& figure_declaration() override;
 
@@ -209,6 +236,10 @@ namespace chess { // Базовый игровой неймспейс
 
 			Solder(size_t id, FigureColor color) : Figure(id, color) {
 				figure_declaration();
+			}
+
+			Solder(size_t id, FigureColor color, Coordinates coord) : Figure(id, color, coord) {
+				figure_declaration().set_in_game();
 			}
 
 			Solder(const Solder&) = default;
@@ -236,6 +267,10 @@ namespace chess { // Базовый игровой неймспейс
 			}
 
 			Empty(size_t id, FigureColor color) : Figure(id, color) {
+				figure_declaration();
+			}
+
+			Empty(size_t id, FigureColor color, Coordinates coord) : Figure(id, color, coord) {
 				figure_declaration();
 			}
 

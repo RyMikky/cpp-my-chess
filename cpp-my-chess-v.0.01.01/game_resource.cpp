@@ -34,6 +34,11 @@ namespace chess {
 			return *this;
 		}
 
+		Figure& Figure::set_coordinates(Coordinates coord) {
+			coord_ = coord;
+			return *this;
+		}
+
 		Figure& Figure::set_in_game() {
 			in_game_ = true;
 			return *this;

@@ -25,4 +25,4 @@ namespace chess {
 
 	} // namespace geo
 
-} // namespace chess_game
+} // namespace chess
